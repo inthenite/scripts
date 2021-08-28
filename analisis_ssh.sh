@@ -1,6 +1,7 @@
 #!/bin/bash
 # Análisis de los logs de sshd sobre los intentos de entrada
 # inthenite.com
+# Licencia GPL-3.0-or-later
 
 # Variables entorno
 # Raiz para todos los ficheros
