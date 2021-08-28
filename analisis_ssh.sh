@@ -112,7 +112,7 @@ echo ""
 cat $ffailed | awk '{split($0,f,"from "); print f[2]}' |cut -d " " -f 1 | sort > $fip
 cat $fip | uniq -c | sort -n > $fipuni
 res_41=$( cat $fipuni | wc -l )
-echo "Número de direcciones ip diferentess: $res_41"
+echo "Número de direcciones ip diferentes: $res_41"
 echo "Fichero con las direcciones IP y número de intentos: $fipuni"
 cat $fip | uniq > $fuip
 echo "Top #5 de direcciones IP"
@@ -155,7 +155,7 @@ done
 
 cat $fipinfo  | grep \"org\" | cut -d: -f2 | sort | uniq -c | sort -n > $fasnuni
 res_51=$(cat $fasnuni | wc -l)
-echo "Número de ASN diferentess: $res_51"
+echo "Número de ASN diferentss: $res_51"
 echo "Fichero con las ASN y número de IPs por ASN: $fasnuni"
 echo "Top #5 de ASN"
 tail -5 $fasnuni
@@ -168,11 +168,10 @@ echo "De las $res_41 direcciones IP sólo $res_42 tienen nombre de host"
 # Paises
 cat $fipinfo | grep country\": | cut -d: -f2 | sed "s/,//g" | sort | uniq -c| sort -n > $fpaises
 res_43=$(cat $fpaises  | wc -l)
-echo "Número total de paises diferentes $res_43"
-echo "Fichero paises $fpaises"
-echo "Top #5 de paises"
+echo "Número total de países diferentes $res_43"
+echo "Fichero países $fpaises"
+echo "Top #5 de países"
 tail -5 $fpaises
 echo ""
 
 
-# 7 Ficheros utilizados
