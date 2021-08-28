@@ -1,0 +1,56 @@
+analisis_ssh.sh es una herramienta que analiza los ataques por fuerza bruta a tu servicio sshd.
+Está preparado tanto para sistemas tipo Red Hat como Debian.
+Para averiguar información sobre las direcciones IP se usa la web ipinfo.io, como tiene limitado
+el número de peticiones diarias, recomiendo pedir un token para que se pueda obtener información más completa
+
+
+Ejemplo de uso de analisis_ssh.txt
+
+# ./analisis_ssh.sh 123456789012
+Comprobando el token
+Token ipinfo ok
+
+Inicio del análisis con el fichero de log auth.log
+Usando fichero: /var/log/auth.log
+Usando fichero: /var/log/auth.log.1
+Usando fichero: /var/log/auth.log.2.gz
+Usando fichero: /var/log/auth.log.3.gz
+Usando fichero: /var/log/auth.log.4.gz
+ 
+Número de intentos de entrada: 61149
+Número de usuarios diferentes que han intentado entrar: 4077
+Fichero con los usuarios y número de intentos: /tmp/27823.useruni
+Top #5 de usuarios
+    338 oracle
+    377 test
+    740 user
+   1837 admin
+  40255 root
+
+Número de direcciones ip diferentess: 5537
+Fichero con las direcciones IP y número de intentos: /tmp/27823.ipuni
+Top #5 de direcciones IP
+    128 2X2.1X6.42.13
+    128 2X2.1X7.238.136
+    134 222.1X7.239.109
+    141 2X1.1X1.165.56
+    158 2X1.1X1.185.198
+
+Número de ASN diferentess: 945
+Fichero con las ASN y número de IPs por ASN: /tmp/27823.asnuni
+Top #5 de ASN
+    157  "AS4134 CHINANET-BACKBONE",
+    171  "AS38365 Beijing Baidu Netcom Science and Technology Co., Ltd.",
+    221  "AS53667 FranTech Solutions",
+    676  "AS14061 DigitalOcean, LLC",
+   1369  "AS45090 Shenzhen Tencent Computer Systems Company Limited",
+
+De las 5537 direcciones IP sólo 1274 tienen nombre de host
+Número total de paises diferentes 119
+Fichero paises /tmp/27823.paises
+Top #5 de paises
+    165  "SG"
+    183  "DE"
+    206  "IN"
+    738  "US"
+   2332  "CN"
