@@ -115,7 +115,7 @@ def main(inicio, fin, salida):
     sesion = bitcoin_rpc_init()
     contabilidad = {} # Parejas de dirección y saldo en la dirección
     with open(salida, "w",  buffering=1024*1024) as f:
-        f.write("height,txid,value_btc,address,spent,block_time\n")
+        f.write("altura de bloque,numero,txid,cantidad,dirección,tipo de dirección, timestamp, gastado\n")
 
         for h in range(inicio, fin + 1):
             try:
